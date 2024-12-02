@@ -2,8 +2,8 @@
 // import { ObjectLitereals } from './TypeScript/ObjectLitereals'
 // import { BasicTypes } from './TypeScript/BasicTypes.tsx'
 // import { BasicFuntions } from './TypeScript/BasicFuntions'
-import { CounterComponent } from "./TypeScript/05-CounterComponent"
-
+// import { CounterComponent } from "./TypeScript/05-CounterComponent"
+// import { Componetization } from "./TypeScript/10-Componetization.tsx"
 
 
 function App() {
@@ -16,7 +16,10 @@ function App() {
       {/* <BasicTypes /> */}
       {/* <ObjectLitereals /> */}
       {/* <BasicFuntions />     */}
-      <CounterComponent />
+      {/* <CounterComponent /> */}
+      {/* <Componetization /> */}
+
+      
     </div>
 
     </>
