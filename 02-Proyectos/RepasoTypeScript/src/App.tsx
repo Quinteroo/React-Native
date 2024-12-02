@@ -5,6 +5,8 @@
 // import { CounterComponent } from "./TypeScript/05-CounterComponent"
 // import { Componetization } from "./TypeScript/10-Componetization.tsx"
 
+import { Forms } from "./TypeScript/15-Forms"
+
 
 function App() {
 
@@ -18,8 +20,9 @@ function App() {
       {/* <BasicFuntions />     */}
       {/* <CounterComponent /> */}
       {/* <Componetization /> */}
+      <Forms />
 
-      
+
     </div>
 
     </>
