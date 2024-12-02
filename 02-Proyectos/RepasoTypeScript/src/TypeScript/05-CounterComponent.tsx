@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 
-import { useCounter } from "./hooks/useCounter"
+import { useCounter } from "./hooks/06-useCounter"
 
 export const CounterComponent = () => {
   

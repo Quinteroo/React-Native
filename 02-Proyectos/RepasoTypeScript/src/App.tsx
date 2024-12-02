@@ -2,7 +2,7 @@
 // import { ObjectLitereals } from './TypeScript/ObjectLitereals'
 // import { BasicTypes } from './TypeScript/BasicTypes.tsx'
 // import { BasicFuntions } from './TypeScript/BasicFuntions'
-import { CounterComponent } from "./TypeScript/CounterComponent"
+import { CounterComponent } from "./TypeScript/05-CounterComponent"
 
 
 
