@@ -21,7 +21,7 @@ interface Address {
 export const ObjectLitereals = () => {
 
   // si posamos el mouse sobre "person" nos aparece un modal con el typo de cada dato
-  const person= {
+  const person:Person= {
     age: 34,
     firstName: "Miguel",
     lastName: "Quintero",
