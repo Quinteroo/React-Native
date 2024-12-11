@@ -2,9 +2,9 @@ import { useState, createContext, PropsWithChildren, useEffect } from "react";
 
 
 enum AuthStatus {
-  "checking",
-  "authenticated",
-  "unauthenticated" // empleamos comas en vez de |
+  "checking", //! de esta manera se renderiza 0, 1 o 2 (las posiciones)
+  "authenticated" = "authenticated", //*para que se renderice el string lo ponemos así
+  "unauthenticated" = "unauthenticated" // empleamos comas en vez de |
 }
 
 interface AuthState { // cuando hablamos de Autenticación es normal tener el valor status
