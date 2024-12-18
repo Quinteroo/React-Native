@@ -64,6 +64,9 @@ if (!loaded) {
 29 // añadimos a colors as const; àra que se lean como colores y no que TS los aplique como strings
 30 // añadimos de RootLayout el view style {backgroundColor:Colors.background}
 31 // añadimos flex 1 para que se estire y ocupe toda la pantalla
+32 // debajo de Slot ponemos el <StatusBar /> //* lo importamos de Expo no de RN
+33 // style="light"
+34
 
 
 
@@ -83,21 +86,33 @@ if (!loaded) {
 
 
 //! Custom Text y Default Props
-45 
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
+// cuando un componente se repite en una aplicación y hay que personalizarlo aplicando muchas propertis del componente
+// este puede llegar a volverse demasiado complejo y hacer demasiado grande el componente
+// por lo que procedemos a //* extraer el componente
+45 // creamos la carpeta /components y el archivo del componente por ej //* /CustomText.tsx
+46 // en este componete, hacemo sel rich snniped rnfe y como es un texto, eliminamos el view
+47 // al meter el compoennte en el CalculatorApp y escribir en el, TS se queja porque no tenemos definido los childrens del compoennte, así que los definimos
+48 // interface Props { children: "string"}, en la función ({childre}:Props) y dentro del Text del componente {children}
+49 // pero claro, no siempre tiene que ser un string lo que pasemos como children, puede ser también un número no?
+50 // además, necesitamos poder usar desde CalculatoApp en CustomText las propiedades del texto pero //? como le decimos a TS que puede usarlo?
+51 // interface Props extends TextProps {} (lo importamos junto con Text), de esta forma //* le decimos que puede emplear las mismas props que text si lo necesita
+52 // para ello, en CustomText en Text hacemos un {...rest} //* spread operator, de esta forma las puede usar (también hay que pasarlo como props)
+53 // para facilitar los estilos, también podemos pasar como property una //* variante para hacer un ternario
+
+// interface Props extends TextProps{
+//   variant: "h1" | "h2"
+// }
+
+// CustomText({children, variant, {...rest}})
+
+// <Text style={[color: "white", fontFamily:"SpaceMono"],
+//   variant === "h1" ? GlobalStyles.mainResult : GlobalStyles.subResult
+// }
+
+54 // lo pasamos variant como Props variant="h1"en CustomText
+55 //* si haces Alt + Click sobre un componente te lleva a una pantalla con la def de este y sus porperties
 
 
 
 
-32 // debajo de Slot ponemos el <StatusBar /> //* lo importamos de Expo no de RN
-33 // style="light"
-34
+
