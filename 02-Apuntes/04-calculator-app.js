@@ -66,6 +66,38 @@ if (!loaded) {
 31 // añadimos flex 1 para que se estire y ocupe toda la pantalla
 
 
+
+//! Estilos globales
+34 // crea carpte en la raiz y un archivo ts para stlyes
+35 // export ocnts globalStyles = StyleSheet.creat ({})
+36 // crea style con el background y color que pusimos al view de RootLayout
+37 // importamos en el view stle={globalStyles.background}
+38 // organizamoz los imports de arriba abajo //* primero lo que venga de react-native luego expo y por ultimo mis imports personalizados
+39 // creamos el estilo globlal calculatorContainer : {}
+40 // coloca en el view de Calculator App GlobalStyles.calculatorContainer
+41 // da estilos flex a la clase calculatorContainer
+42 // creamos las clases mainResult y lo añadimos al text de Calculator App
+// (estamos siguiendo el modelo del diseño para orientarnos con los estilos) 
+43 // color, fontSize, textAling, fontWeight
+44 // lo mismo con la clase subResult, para el sengundo Text de CalculatorApp
+
+
+//! Custom Text y Default Props
+45 
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+
+
+
+
 32 // debajo de Slot ponemos el <StatusBar /> //* lo importamos de Expo no de RN
 33 // style="light"
 34
