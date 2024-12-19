@@ -113,6 +113,32 @@ if (!loaded) {
 55 //* si haces Alt + Click sobre un componente te lleva a una pantalla con la def de este y sus porperties
 
 
+//! BOTONES DE LA CALCULADORA
+// siguiendo el modelo del diseño de la interfaz facilitado
+56 // metemos los dos Text con lso resultados dentro de otro View (funcionan como divs)
+// como vemos en el diseño, podríamos ir construyendo el diseño en bloque con filas de 4 botones en columna 
+57 // creamos compoennte CalculatorButton, rnfe y Pressable
+58 // importamo el Calculator Button dentro del view
+59 // como podemos ver podemos emplear el mismo compoennte pero dándole la capacidad de personalizarlo con colores, texto, y funciones
+//? creamos estylos globales, aunque también podríamos hacerlo dentro de cada componente
+60 // aplicamos TS al CalculatorButton, con el interface Props { label:string, color: string, blackText: false, onPress: => void}
+61 // hacemos destructurin de las props, en el componente ({label, color, blackText=false, onPress}:Props) (podemos indicar el por defecto (como el false))
+62 // añadmios al compoennte laas props por ejemplo onPress={onPress} o un ternario para el colo del texto style={{color: blackText ? "black" : "white"}}
+63 // en CalculatorApp pasamos las props de cada botón 
+64 // renderizamos de nuevo la app
 
-
-
+//! BOTONES CALCULADORA parte 2
+65 //01.40 hacemos destructuring en styles=({pressed}=>({ metemos los estilos y opacity: pressed ? 0.8 : 1}))
+66 // construimos el resto de las filas
+67 // para el útimo botón, el de 0, le podemos poner la prop doubleSized
+68 // la pasamos por la interface como doubleSized?:boolean y al hacer destructuring la ponemos por defecto como false
+69 // dentro del {pressed} de Pressable hacemos el ternatio width: doubleSized ? 180 : 80,
+70
+71
+72
+73
+74
+75
+76
+77
+78
