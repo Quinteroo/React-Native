@@ -118,12 +118,12 @@ if (!loaded) {
 56 // metemos los dos Text con lso resultados dentro de otro View (funcionan como divs)
 // como vemos en el diseño, podríamos ir construyendo el diseño en bloque con filas de 4 botones en columna 
 57 // creamos compoennte CalculatorButton, rnfe y Pressable
-58 // importamo el Calculator Button dentro del view
+58 // importamos el CalculatorButton dentro del view
 59 // como podemos ver podemos emplear el mismo compoennte pero dándole la capacidad de personalizarlo con colores, texto, y funciones
 //? creamos estylos globales, aunque también podríamos hacerlo dentro de cada componente
 60 // aplicamos TS al CalculatorButton, con el interface Props { label:string, color: string, blackText: false, onPress: => void}
 61 // hacemos destructurin de las props, en el componente ({label, color, blackText=false, onPress}:Props) (podemos indicar el por defecto (como el false))
-62 // añadmios al compoennte laas props por ejemplo onPress={onPress} o un ternario para el colo del texto style={{color: blackText ? "black" : "white"}}
+62 // añadmios al compoennte las props por ejemplo onPress={onPress} o un ternario para el colo del texto style={{color: blackText ? "black" : "white"}}
 63 // en CalculatorApp pasamos las props de cada botón 
 64 // renderizamos de nuevo la app
 
@@ -133,12 +133,30 @@ if (!loaded) {
 67 // para el útimo botón, el de 0, le podemos poner la prop doubleSized
 68 // la pasamos por la interface como doubleSized?:boolean y al hacer destructuring la ponemos por defecto como false
 69 // dentro del {pressed} de Pressable hacemos el ternatio width: doubleSized ? 180 : 80,
-70
-71
-72
-73
-74
-75
-76
-77
-78
+
+
+//! PAQUETES ADICIONALES HAPTICS Y NAVIGATIONBAR
+70 // NavigationBar lo empleamos para quitar una barra blanca que aparece en la parte baja de la app en dispositivos Android
+// pero esto no es necesario hacerlo en iOS
+//? https://docs.expo.dev/versions/latest/sdk/navigation-bar/
+71 // instalamos el paquete con //* npx expo install expo-navigation-bar
+72 // importamos en _layout la api / componente  //* import * as NavigationBar from 'expo-navigation-bar';
+73 // creamos la función que distingue el tipo de dispositivo en el que nos encontramos, lo hacemos importanto //* Platform de react-native
+const isAndroid = Platform.OS === "android"
+
+if (isAndroid) {
+  NavigationBar.setBackgroundColorAsync("black"); // o el color que sea
+}
+
+74 // este cambio no se aprecia en el emulador de Android en el PC pero una vez lo ponemos en el móvil desaparece la barra blanca 
+//* reload app
+
+75 // para el hapstic seguimos el mismo procedimiento
+//? https://docs.expo.dev/versions/latest/sdk/haptics/
+76 // en el componente que queremos aplicar el efecto de vibración para percibir el feedback de que hemos hecho click //* import * as Haptics from 'expo-haptics';
+77 // aplicamos dentro del componente
+// onPress={()=>
+// Haptics.selectionAsync();
+// onPress();
+//}
+//* reload app
