@@ -9,6 +9,7 @@ export const GlobalStyles = StyleSheet.create({
     justifyContent: "flex-end"
   },
   calculatorContainer : {
+    padding: 10
 
   },
   mainResult:{
@@ -25,5 +26,6 @@ export const GlobalStyles = StyleSheet.create({
     textAlign: "right",
     marginTop: 10
   
-  }
+  },
+  row:{ flexDirection: "row", justifyContent:"space-around", alignItems: "center"}
 })
