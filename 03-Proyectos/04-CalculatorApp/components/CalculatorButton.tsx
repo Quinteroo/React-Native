@@ -24,8 +24,8 @@ const CalculatorButton = ({label, color, big =false, blackText=false, onPress} :
   })}
   onPress={()=>
   {
-    Haptics.selectionAsync(),
-    onPress
+    Haptics.selectionAsync();
+    if (onPress) onPress();
   }}
   
   >
