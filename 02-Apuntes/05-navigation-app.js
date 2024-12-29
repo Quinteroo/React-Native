@@ -32,15 +32,15 @@
 9 // de la carpeta "static" sacamos las fuentes que nos interesan y las dejamos caer enla carpeta //* /fonts del proyecto
 10 // borramos la space mono que no vamos a usar
 11 // modificamos el archivo de tailwind.config.js para que podamos usar las fuentes a traves de tailwind a la hora de estilar
-theme: {
-  extend: {
-    fontFamily: { //* ponemos los nombres que queremos usar en tailwind
-      "work-black": ["WorkSans-Black", "sans-serif"], //? taildwind le añade el "font-work-black"
-        "work-light": ["WorkSans-Light", "sans-serif"], //! tiene que ser el nombre literal del archivo (sin el .ttf)
-          "work-medium": ["WorkSans-Medium", "sans-serif"], // ponemos la funte en caso de no encontrala (sans-serif)
-    }
-  }
-}
+// theme: {
+//   extend: {
+//     fontFamily: { //* ponemos los nombres que queremos usar en tailwind
+//       "work-black": ["WorkSans-Black", "sans-serif"], //? taildwind le añade el "font-work-black"
+//         "work-light": ["WorkSans-Light", "sans-serif"], //! tiene que ser el nombre literal del archivo (sin el .ttf)
+//           "work-medium": ["WorkSans-Medium", "sans-serif"], // ponemos la funte en caso de no encontrala (sans-serif)
+//     }
+//   }
+// }
 
 12 // ahora cargamos en RootLayout la fuente
 
@@ -85,7 +85,29 @@ useEffect(() => {
 
 
 //! NAVEGACIÓN
-22
+22 // la carpeta app es donde están todas las Screen
+// para construir nuevas screen creamos carpetas independientes, eje:
+//  /products/index.tsx
+//  /profile/index.tsx
+//  /home/index.tsx
+//* aunque sean varios index, lo interesante es crearlas por carpeta, por si un día la app crece
+//* y necesita subnavegación, poder escalarla
+//* por ej:
+//* /products/_layout.tsx index.tsx descriptions.tsx
+
+// para que todas las pantallas (si nuestro diseño lo requiere) no se coman el top del móvil
+// podemos meter el <Slot> dentro de un <SafeViewArea>
+
+// es muy común que app redirija a alguna pantalla al iniciar la app (por ejemplo, si es un app en la que se ha ehcho login)
+// que nos lleve al perfil del usuario )
+// para ello empleamos el componente <Redirect href="/home" />
+// el cual importamos de expo-router
+
+// dentro de /home podemos importar un componente de expo-router que se llama <Link href=""/>
+// el cual nos ayuda a navegar entre las pantallas
+
+//?toda la relacioón de carpetas y archivos dentro de /app se nombran en minúsculas
+
 23
 24
 25

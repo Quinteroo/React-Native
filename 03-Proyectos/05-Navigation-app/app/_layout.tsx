@@ -2,22 +2,20 @@ import React, { useEffect } from 'react';
 import { Slot, SplashScreen } from 'expo-router';
 import { useFonts } from "expo-font";
 import "./global.css";
-
-SplashScreen.preventAutoHideAsync() //! podemos renderizar el SplashScreen mientras se cargan las fonts
-
+import { SafeAreaView } from 'react-native';
 
 const RootLayout = () => {
-
   const [fontsLoaded, error] = useFonts({
-    "WorkSans-Black": require("../assets/fonts/WorkSans-Black.ttf"), //* el path (directorio) donde se encuentran las fuentes
+    "WorkSans-Black": require("../assets/fonts/WorkSans-Black.ttf"),
     "WorkSans-Light": require("../assets/fonts/WorkSans-Light.ttf"),
     "WorkSans-Medium": require("../assets/fonts/WorkSans-Medium.ttf"),
-  
   });
 
   useEffect(() => {
+    SplashScreen.preventAutoHideAsync(); // Iniciar el SplashScreen mientras se cargan las fuentes
+
     if (error) {
-      throw error; // Lanzar el error si ocurre
+      throw error; // Lanzar error si ocurre
     }
 
     if (fontsLoaded) {
@@ -25,14 +23,17 @@ const RootLayout = () => {
     }
   }, [fontsLoaded, error]);
 
-  // Mostrar nada hasta que las fuentes estén cargadas o haya un error
   if (!fontsLoaded) {
-    return null;
+    return null; // Mostrar nada hasta que las fuentes estén cargadas
   }
 
+  return (
+    <SafeAreaView>
+      <Slot />
+    </SafeAreaView>
+  
 
-
-  return <Slot/>
+  )
 };
 
-export default RootLayout
+export default RootLayout;
