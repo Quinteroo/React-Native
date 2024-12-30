@@ -108,8 +108,60 @@ useEffect(() => {
 
 //?toda la relacioón de carpetas y archivos dentro de /app se nombran en minúsculas
 
-23
-24
+//! CUSTOM BUTTON Y LINK AScHILD
+// cuando queremos crear un botón personalizado creamos una carpeta fuera de app
+// /app/shared/components/CustomButton.tsx
+
+// el custombutton tiene como compoentne un Pressable, si queremos llevar las Props de los Pressable 
+// a nuestro componente cuando lo importemos en una Screen tenemos en el interface que poner
+//* interface Props extends PressableProps{ children: String, color: "primary" | "secondary" }
+
+// la opacidad si queremos hacerlo de manera tradicional hay que hacer el destructuring de la propiedad
+// pressed
+// styles={({pressed})=>({})} //* dentro poner los ternarios
+
+// como hemos expandido las props de pressable a CustomButton, podemos destructurar las propiedades
+// onPress={onPress} y onLongPress={onLongPress} dentro de Pressable
+
+//? para poder darle la propiedad de Link a CustomButton tenemos que importar de expo-router >> router
+
+23 //* onPress={()=> router.push("/products")}
+
+// si queremos utilizar el Link como componente padre de CustomButton tenemos que ponerle la propiedad
+//* asChild
+
+{/* <Link href="/products" asChild>
+  <CustomButtom color="primary" >Productos</CustomButtom> 
+</Link> */}
+
+
+
+//! FOWARDREF
+// para que funcione el el <Link> con el asChild nec esitamos pasar esa referencia Child
+// y evitar así que nos de error
+
+// se emplea parecido a //* memo()
+// envolvemos toda la función cón 
+
+const CustomButton = React.forwardRef("aquí el resto del código")
+  // tenemos que pasar por los argumentos del funtionalComponent ref
+
+  // ({children, color...}:Props, ref: React.Ref<View>)=>{
+
+  //   [...resto del código]
+  // }
+
+  //* tenemos que incluir el ref dentro del Pressable
+
+  < Pressable >
+  className
+onPress
+onLongPress
+ref = { ref }
+  < Pressable >
+
+
+  24
 25
 26
 27
