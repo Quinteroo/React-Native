@@ -1,7 +1,7 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
-import { Link, router } from 'expo-router'
-import CustomButton from '@/components/CustomButton/CustomButton'
+import { View, Text, SafeAreaView } from 'react-native';
+import React from 'react';
+import { Link, router } from 'expo-router';
+import CustomButton from '@/components/CustomButton/CustomButton';
 
 const Home = () => {
 
@@ -11,19 +11,18 @@ const Home = () => {
       <Text style={{color:"black"}}>Home</Text>
 
       <CustomButton color="primary" onPress={()=> router.push("/products")}>
-        Productos
+        Products
+      </CustomButton>
+
+      <CustomButton color="secondary" onPress={()=> router.push("/profile")}>
+        Profile
       </CustomButton>
 
 
-      <Link href="/profile" asChild>
+      {/* <Link href="/profile" asChild>
       <CustomButton color="secondary">Profile</CustomButton>
-      </Link>
+      </Link> */}
 
-
-
-
-      {/* <Link href="/products">Products</Link>
-      <Link href="/profile">profile</Link> */}
     </View>
     </SafeAreaView>
 

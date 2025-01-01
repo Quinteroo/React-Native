@@ -144,24 +144,29 @@ useEffect(() => {
 // envolvemos toda la función cón 
 
 const CustomButton = React.forwardRef("aquí el resto del código")
-  // tenemos que pasar por los argumentos del funtionalComponent ref
+// tenemos que pasar por los argumentos del funtionalComponent ref
 
-  // ({children, color...}:Props, ref: React.Ref<View>)=>{
+// ({children, color...}:Props, ref: React.Ref<View>)=>{
 
-  //   [...resto del código]
-  // }
+//   [...resto del código]
+// }
 
-  //* tenemos que incluir el ref dentro del Pressable
+//* tenemos que incluir el ref dentro del Pressable
 
-  < Pressable >
-  className
-onPress
-onLongPress
-ref = { ref }
-  < Pressable >
+//   < Pressable >
+//      className
+//      onPress
+//      onLongPress
+//      ref = { ref }
+//   < Pressable >
 
 
-  24
+//! STACJ NAVIGATION
+//? genera en el header de la aplicaicón una flecha para volver a la pantalla anterior
+// también es posible volver atrás arrastrando el dedo
+
+
+24 // en _layout importa stack from expo-router y cambia slot por <Stack/>+
 25
 26
 27
