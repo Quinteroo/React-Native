@@ -13,7 +13,8 @@ const Products = () => {
           <View className='mt-10'>
             <Text className='text-2xl font-work-black'>{item.title}</Text>
             <Text className=''>{item.description}</Text>
-            <Link className="text-primary" href={`/(stack)/products/${item.id}`}>
+            <Link className="text-primary" href={`/(stack)/products/${item.id}`}
+            >
                 ver detalles
             </Link>
           </View>
