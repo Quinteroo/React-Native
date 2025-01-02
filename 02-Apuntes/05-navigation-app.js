@@ -161,15 +161,78 @@ const CustomButton = React.forwardRef("aquí el resto del código")
 //   < Pressable >
 
 
-//! STACJ NAVIGATION
+//! STACK NAVIGATION
 //? genera en el header de la aplicaicón una flecha para volver a la pantalla anterior
 // también es posible volver atrás arrastrando el dedo
 
 
 24 // en _layout importa stack from expo-router y cambia slot por <Stack/>+
-25
-26
-27
-28
-29
-30
+25 // para que funcione <Stack/> en _layout es neceario //* quitar <SaveViewArea>
+
+//? también es posible personalizar el stackNavigation
+26 // creamos al carpeta /app/(stack)
+27 // en (stack) todas las carpetas de las diferentes screens/pantallas las metemos dentro
+28 // con (stack) entre paréntesis le estamos diciendo a nuestro filSystem
+//* "ok, esto nos ayuda como agruppador pero no queremos que aparezaca visible en las rutas"
+29 // creamos dentro de (stack) un archivo _layout.tsx
+// rnfe StackLayout
+30 // en /app/_layout.tsx cambiamos de nuevo <Stack> por <Slot>
+// en /app/index.tsx podemos dejar el Redirect href="/home" o cambiarlo a //* href="/(stack)/home"
+
+31 // comprobamos si funciona poniendo en /app/(stack)/_layout.tsx retunr ( <Stack/>)
+
+//? para terminar de personalizar la navegación por Stack tenemos que añadir los Stack.Screen
+// dado que Stack por si solo crea stacks con los nombres de los archivos
+
+const StackLayout = () => {
+  return (
+    <Stack>
+      <Stack.Screen
+        name="home/index"
+        options={{
+          title: "Home Screen"
+        }}
+      />
+    </Stack>
+  )
+}
+
+32 // y lo repetimos para cada pantalla
+
+//! PERSONALIZACIÓN STACK NAVIGATION
+//? podemos hacerlo a nivel de Stack.Screen o a nivel general directametne desde Stack.
+
+// <Stack.Screen
+//     name="products/index"
+//     options={{
+//       title:"Products Screen",
+//       animation: "ios" //* para que haga transiciones como en ios
+//     }}
+// />
+
+
+//! <FLATLIST /> componente
+// nos ayuda a devolver un listado de objetos, como si en react hicieramos una llamada y renderizamos los datos
+// parecico a un .map() para devolver una serie de cards
+
+//? para este ejemplo creamos la carpeta store con el archivo products.list.ts con los datos del ejemplo aportado 
+//? en la lección
+33 // en la página (o Screen) importamos <FlatList> de react-native 
+34 // return ( <View> <FlatList> )
+35 // tenemos que usar data={productList} keyExtactoer={products.id} y renderItem={({item}) => ()}
+36 //* renderItem nos sirve para poder indicar como queremos que se devuelva cada objeto
+
+//! PRODUCT CARD
+// queremos que el enlace que tiene cada item en el FlatList derive a la pantalla de detalle de dicho producto
+// hay varias formas de organizarlo, en nuestro caso, creamos dentro //*  /product/[id].tsx
+
+// [id].tsx, le está indicando que tenemos estamos esperando un argumento
+// rnfe y lo nombramos por jemplo //* productCard
+
+// en el FlatList //* <Link href="`/(stack)/product/${item.id}`"
+
+// en productCard //* const {id} = useLocalSearchParams() //* const product= products.find(p => p.id === id)
+//* if(!product){return <Redirect href="/"}
+
+37
+38
