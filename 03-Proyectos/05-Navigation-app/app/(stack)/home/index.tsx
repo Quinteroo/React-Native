@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <SafeAreaView>
     <View style={{padding:10}}>
-      <Text style={{color:"black"}}>Home</Text>
 
       <CustomButton color="primary" onPress={()=> router.push("/products")}>
         Products
