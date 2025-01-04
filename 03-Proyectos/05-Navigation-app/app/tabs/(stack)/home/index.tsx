@@ -9,11 +9,11 @@ const Home = () => {
     <SafeAreaView>
     <View style={{padding:10}}>
 
-      <CustomButton color="primary" onPress={()=> router.push("/products")}>
+      <CustomButton color="primary" onPress={()=> router.push("/tabs/(stack)/products")}>
         Products
       </CustomButton>
 
-      <CustomButton color="secondary" onPress={()=> router.push("/profile")}>
+      <CustomButton color="secondary" onPress={()=> router.push("/tabs/(stack)/profile")}>
         Profile
       </CustomButton>
 

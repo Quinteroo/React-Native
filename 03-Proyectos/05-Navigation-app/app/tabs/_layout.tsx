@@ -4,7 +4,14 @@ import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: 'green' }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: 'green', headerShown:false }}>
+      <Tabs.Screen
+        name="(stack)"
+        options={{
+          title: 'stack',
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="person-outline" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="home/index"
         options={{
