@@ -233,6 +233,5 @@ const StackLayout = () => {
 
 // en productCard //* const {id} = useLocalSearchParams() //* const product= products.find(p => p.id === id)
 //* if(!product){return <Redirect href="/"}
-
 37
 38
