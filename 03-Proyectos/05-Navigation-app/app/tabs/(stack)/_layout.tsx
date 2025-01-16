@@ -12,12 +12,7 @@ const StackLayout = () => {
         }
       }}
     >
-      <Stack.Screen
-        name="home/index"
-        options={{
-          title:"Home Screen"
-        }}
-      />
+      <Stack.Screen name="home/index" options={{ title:"Home Screen" }}/>
 
      <Stack.Screen
         name="products/index"

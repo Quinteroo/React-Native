@@ -5,7 +5,7 @@ import { Redirect } from 'expo-router'
 const App = () => {
 
   //  return <Redirect href="/(stack)/home" />
-   return <Redirect href="/drawers" />
+   return <Redirect href="/tabs/(stack)/home" />
 
 
   // return (
