@@ -36,8 +36,8 @@
 //! VARIABLES DE ENTORNO Y API key
 // creamos el documento en el root de nuestra app //* .env
 // incluimos .env en //* .gitignore
-// escribimos en .env //* MOVIE_URL= y MOVIE_API_KEY=
-// creamo sel documento //* .env.template con MOVIE_URL= y MOVIE_API_KEY= //comentario con url de donde la hemos obtenido
+// escribimos en .env //* EXPO_PUBLIC_MOVIE_DB_URL y EXPO_PUBLIC_MOVIE_DB_KEY=
+// creamo sel documento //* .env.template con EXPO_PUBLIC_MOVIE_DB_URL= y EXPO_PUBLIC_MOVIE_DB_KEY= //comentario con url de donde la hemos obtenido
 // este documento, sirve por si subimos nuestro proyecto a github que la gente sepa de donde a hemos obtenido por si quiere trbaajar con uestro proyecto
 
 
@@ -46,9 +46,15 @@
 // al crearnos la cuenta, en nuestro perfil en "editar perfil" podemos ver la opcción //* API
 // copiamos nuestra API y la copiamos en MOVIE_API_KEY
 
-// la url la vamos a obtneer de //? url que aparece en el apartado
+// la url la vamos a obtneer de //? developer.themoviedb.org
+//? https://developer.themoviedb.org/reference/configuration-details
+
+// aquí tenemos todas las llamadas al backend //* https://developer.themoviedb.org/reference
+// hay que procurar tenerlo puesto en //* formato Node.js
+
+// en el apartado //* MOVIE LIST > Now Playing es donde la obtenemos
 // copiamos la url del //* ejemplo del fetch sin el /(slash final)
-// lo incluimos en //* MOVIE_URL=aqui
+// lo incluimos en //* EXPO_PUBLIC_MOVIE_DB_URL=https://api.themoviedb.org/3/movie
 
 
 
