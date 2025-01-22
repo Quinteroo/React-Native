@@ -3,6 +3,9 @@ import React from 'react'
 import { useFetch } from '@/hooks/useFetch'
 import { MovieDBresponse } from '@/api/movie-db.response'
 import { useSafeAreaInsets } from "react-native-safe-area-context"
+import MoviesCarousel from '@/components/Carousel' //! A
+
+import MyCarousel from "../../components/MyCarousel"
 
 const homeScreen = () => {
 
@@ -19,12 +22,25 @@ const homeScreen = () => {
   }
 
 
-
   return (
-    <View style={{paddingTop: safeArea.top}}>
-      <Text>homeScreen</Text>
+    <View style={{paddingTop: safeArea.top, marginTop:10}}>
+      <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>homeScreen</Text>
+      {
+      data ? <MoviesCarousel movies={data} /> //! B 
+      : "No acceso a films" //* C
+      }
+
+      <MyCarousel />
+      
     </View>
   )
 }
 
 export default homeScreen
+
+//! A >> Cuidado con las importaciones
+
+//! B >> las props tienen que ser las mismas
+
+//* C >> los objetos recibidos a traves de peticiones fetch pueden dar error o ser undefine
+//* en ese caso hay que hacer un ternario, si no typeScrip NO lo acepta
