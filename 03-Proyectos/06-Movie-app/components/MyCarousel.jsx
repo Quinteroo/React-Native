@@ -15,7 +15,7 @@ const MyCarousel = () => {
     <View style={styles.container}>
       <Carousel
         width={width} // El ancho del carrusel es el ancho de la pantalla
-        height={200} // Altura del carrusel
+        height={300} // Altura del carrusel
         data={data} // Datos del carrusel
         renderItem={({ item }) => (
           <View style={styles.card}>
@@ -24,9 +24,9 @@ const MyCarousel = () => {
           </View>
         )}
         loop={true} // Hace que el carrusel sea infinito
-        autoPlay={true} // Activa el modo automático
-        autoPlayInterval={3000} // Intervalo entre cada slide en milisegundos
+        autoPlay={true} // Desactiva el modo automático
         scrollAnimationDuration={1000} // Duración de la animación de desplazamiento
+
       />
     </View>
   );
@@ -43,9 +43,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 20,
     overflow: 'hidden',
     backgroundColor: '#FFF',
+    marginTop: 10,
+    overflow: "hidden"
+
   },
   image: {
     width: '100%',

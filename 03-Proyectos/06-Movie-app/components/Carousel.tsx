@@ -5,6 +5,7 @@ import Carousel, { ICarouselInstance } from 'react-native-reanimated-carousel';
 
 
 import { MovieDBresponse, Result } from '@/api/movie-db.response'
+import MoviePoster from './MoviePoster';
 
 interface MoviesCarouselProps {
   movies: MovieDBresponse    //!!!
@@ -17,7 +18,7 @@ const MoviesCarousel = ({movies}:MoviesCarouselProps) => {
   //const width = Dimensions.get('window').width; //* 
   const width = useWindowDimensions().width //? 
   return (
-    <View style={{height: 250, width: "auto"}}>
+    <View style={{height: 250, width: "auto", paddingBottom: 10}}>
 
       <Carousel 
       ref={ref}
@@ -32,9 +33,10 @@ const MoviesCarousel = ({movies}:MoviesCarouselProps) => {
       }}
 
       renderItem={({item}:{item:Result}) =>( //! tipado de rederItem
-        <Text style={{fontSize:20}}>
-          {item.title}
-        </Text>
+        <MoviePoster id={item.id} poster={item.poster_path}/>
+        // <Text style={{fontSize:20}}>
+        //   {item.title}
+        // </Text>
       )}
       />
     </View>

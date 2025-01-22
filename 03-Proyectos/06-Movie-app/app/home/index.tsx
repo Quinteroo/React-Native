@@ -6,10 +6,14 @@ import { useSafeAreaInsets } from "react-native-safe-area-context"
 import MoviesCarousel from '@/components/Carousel' //! A
 
 import MyCarousel from "../../components/MyCarousel"
+import FlatListHorizontal from '@/components/FlatListHorizontal'
+
+let api_key = process.env.EXPO_PUBLIC_MOVIE_DB_KEY
+
 
 const homeScreen = () => {
 
-  const {data, loading, error} =useFetch<MovieDBresponse>("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=16db01fbf10a9eca2abe15b911b9a690")
+  const {data, loading, error} =useFetch<MovieDBresponse>(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${api_key}`)
   const safeArea = useSafeAreaInsets()
 
 
@@ -24,13 +28,17 @@ const homeScreen = () => {
 
   return (
     <View style={{paddingTop: safeArea.top, marginTop:10}}>
+      <FlatListHorizontal />
+
       <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>homeScreen</Text>
       {
       data ? <MoviesCarousel movies={data} /> //! B 
       : "No acceso a films" //* C
       }
 
+      <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>Carousel Gatitos</Text>
       <MyCarousel />
+
       
     </View>
   )
