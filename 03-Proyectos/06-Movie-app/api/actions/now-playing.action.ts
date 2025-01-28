@@ -15,6 +15,11 @@ export const nowPlayingAction = async () =>{  //*
     console.log(JSON.stringify(data, null, 2)) // para que nos devuelva en formato JSON por la terminal
     return [] // lo ponemos vacío porque queremos ver simplemente que nos devuelve por consola
     
+    //* sería así
+    // const movies = data.results
+    // return movies //? en este caso, estamos devolviendo un array
+
+
     // data. //?
 
   } catch (error) {

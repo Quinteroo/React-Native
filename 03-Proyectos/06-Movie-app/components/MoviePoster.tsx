@@ -1,5 +1,6 @@
 import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
+import { router } from 'expo-router'
 
 
 interface Props {  //!
@@ -13,7 +14,9 @@ const MoviePoster = ({id,poster,smallPoster=false}:Props) => {
 
 
   return (
-    <Pressable>
+    <Pressable
+    onPress={()=> router.push(`/movies/${id}`)}
+    >
       <Image 
       source={{uri:`https://image.tmdb.org/t/p/w500${poster}`}}
       style={{
