@@ -3,6 +3,8 @@ import React from 'react'
 import { useLocalSearchParams } from 'expo-router'
 import { useFetch } from '@/hooks/useFetch'
 import { MovieDetail } from '@/api/movie-detail.response'
+import { ScrollView } from 'react-native-gesture-handler'
+import MovieHeader from '@/components/MovieHeader/MovieHeader'
 
 
 const URL = process.env.EXPO_PUBLIC_MOVIE_DB_URL
@@ -25,17 +27,12 @@ const MovieDetailsScreen = () => {
   
 
   return (
-    <View style={{flex:1}}>
-      <Text>{data?.original_title}</Text>
-      <Image 
-      source={{uri:`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}}
-      style={{
-        width: 200,
-        height: 350,
-        borderRadius:20
-      }}
-      />
-    </View>
+    <ScrollView>
+      <MovieHeader poster={data?.poster_path} title={data?.title} originalTitle={data?.original_title}/>
+
+
+    </ScrollView>
+
   )
 }
 

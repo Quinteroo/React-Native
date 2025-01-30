@@ -30,14 +30,14 @@ const homeScreen = () => {
     <View style={{paddingTop: safeArea.top, marginTop:10}}>
       <FlatListHorizontal />
 
-      <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>homeScreen</Text>
+      {/* <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>homeScreen</Text>
       {
       data ? <MoviesCarousel movies={data} /> //! B 
       : "No acceso a films" //* C
-      }
+      } */}
 
-      <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>Carousel Gatitos</Text>
-      <MyCarousel />
+      {/* <Text style={{paddingLeft: 20, fontSize:25, fontWeight:600}}>Carousel Gatitos</Text> */}
+      {/* <MyCarousel /> */}
 
       
     </View>
@@ -48,7 +48,7 @@ export default homeScreen
 
 //! A >> Cuidado con las importaciones
 
-//! B >> las props tienen que ser las mismas
+//! B >> las props tienen que ser las mismas que la que espera recibir el componente
 
 //* C >> los objetos recibidos a traves de peticiones fetch pueden dar error o ser undefine
 //* en ese caso hay que hacer un ternario, si no typeScrip NO lo acepta
