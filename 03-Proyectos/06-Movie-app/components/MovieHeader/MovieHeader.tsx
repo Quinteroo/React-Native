@@ -52,7 +52,7 @@ const {height} = useWindowDimensions()  //! A
       </View>
       <View style={{margin:10}}>
         <Text style={{fontSize:20}}>{originalTitle}</Text>
-        <Text style={{fontSize:25, fontWeight:600}}>{title}</Text>
+        <Text style={{fontSize:30, fontWeight:600}}>{title}</Text>
       </View>
         
     </>
