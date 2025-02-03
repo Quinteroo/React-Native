@@ -12,13 +12,14 @@ interface Props extends TextProps{
 
 const ThemedText = ({bold= false,style, children}:Props) => {
 
-  const color = useThemeColor({}, "primary")
+  const color = useThemeColor({}, "text")
 
   return (
     <Text style={[
       {
         color: color,
-        fontWeight: bold ? "bold" : "normal"
+        fontWeight: bold ? "bold" : "normal",
+        marginLeft: 10,
       },
       style
     ]}>

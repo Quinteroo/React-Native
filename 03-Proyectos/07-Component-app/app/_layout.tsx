@@ -30,12 +30,10 @@ export default function RootLayout() {
   }
 
   return (
-    <GestureHandlerRootView style={{backgroundColor: backgroundColor, flex: 1}}>
+    <GestureHandlerRootView style={{backgroundColor: "grey", flex: 1}}>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <ThemedView safe>
-          <ThemedText>hola caracola</ThemedText>
-        </ThemedView>
-        {/* <Stack
+
+        <Stack
         screenOptions={{  //! de esta manera da la impresión que todo es una misma piezz
           headerShadowVisible: false,
           contentStyle:{
@@ -65,7 +63,7 @@ export default function RootLayout() {
             ))
           }
 
-        </Stack> */}
+        </Stack>
       </ThemeProvider>
     </GestureHandlerRootView>
   );
